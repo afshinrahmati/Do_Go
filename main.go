@@ -1,16 +1,23 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+
+	"myapp/doctor"
 )
 
-func main() {
-	//  whoSay string = "afshin"
-	whoSay := "abase"
-	whoSay = "cas"
-	sayHelloWorld(whoSay)
-}
+var s = "Japan"
 
-func sayHelloWorld(whoSay string) {
-	fmt.Println(whoSay)
+func main() {
+	var whatTosay string
+	whatTosay = doctor.Intro()
+	fmt.Println(whatTosay)
+
+	reader := bufio.NewReader(os.Stdin)
+
+	userInput , _ := reader.ReadString('\n')
+	fmt.Println(userInput  )
+
 }
